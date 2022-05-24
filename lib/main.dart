@@ -12,11 +12,28 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'My Route App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: Builder(
+        builder: (context) {
+          return Scaffold(
+            body: Center(
+              child: ElevatedButton(
+                onPressed: () async {
+                  // async-await and Futures
+                  await Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+                },
+                child: Text("Start App"),
+              ),
+            ),
+          );
+        }
+      ),
     );
   }
 }
