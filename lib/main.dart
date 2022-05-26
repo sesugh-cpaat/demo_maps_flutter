@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_1/home.dart';
+import 'package:test_1/test.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
                 onPressed: () async {
                   // async-await and Futures
                   await Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => HomePage()),
+                    MaterialPageRoute(builder: (context) => MyAppTest()),
                   );
                 },
                 child: Text("Start App"),
